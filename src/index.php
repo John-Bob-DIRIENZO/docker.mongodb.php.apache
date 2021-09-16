@@ -3,6 +3,13 @@
 
 require 'vendor/autoload.php';
 
+/**
+ * Il faut contourner le problème pour installer le client
+ * Composer, pour une raison étrange, ne détecte pas MongoDb même si il est installé
+ *
+ * composer require mongodb/mongodb --ignore-platform-reqs
+ */
+
 $client = new \MongoDB\Client("mongodb://root:example@mongo:27017");
 
 $database = $client->selectDatabase('demo');
