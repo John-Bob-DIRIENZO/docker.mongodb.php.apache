@@ -7,6 +7,13 @@ Alors déjà quelques petites précisions :
 composer require mongodb/mongodb --ignore-platform-reqs
 ````
 
+## Du coup pour run ce projet :
+````
+cd ./src
+composer install --ignore-platform-reqs
+docker-compose up -d
+````
+
 En dehors de ça, [la doc plus ou moins complète est ici](https://docs.mongodb.com/php-library/current/tutorial/crud/)
 
 Robo 3T est un client avec un GUI sympa pour visualiser ses datas et insérer le gros JSON comme un âne.
