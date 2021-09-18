@@ -16,6 +16,7 @@ docker-compose up -d
 docker ps
 docker exec -ti <CONTAINER ID> sh
 mongoimport --db demo --collection restaurants --type json --drop --file /usr/games/restaurants.json
+mongoimport --db demo --collection paris --type json --drop --file /usr/games/paris.json
 exit
 cd ./src
 composer install --ignore-platform-reqs

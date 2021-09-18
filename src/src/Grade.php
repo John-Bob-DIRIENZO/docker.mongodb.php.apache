@@ -26,9 +26,6 @@ class Grade
         }
     }
 
-    /**
-     * @return mixed
-     */
     public function getDate()
     {
         return $this->date->toDateTime();

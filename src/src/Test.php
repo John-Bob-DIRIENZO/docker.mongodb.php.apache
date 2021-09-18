@@ -14,10 +14,6 @@ class Test implements \MongoDB\BSON\Unserializable
     private $name;
     private $restaurant_id;
 
-    /**
-     * C'est un peu le constructeur spécial ici
-     * @inheritDoc
-     */
     public function bsonUnserialize(array $data)
     {
         $this->hydrate($data);

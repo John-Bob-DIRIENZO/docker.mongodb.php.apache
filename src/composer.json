@@ -1,17 +1,18 @@
 {
-    "name": "john-bob/src",
-    "autoload": {
-        "psr-4": {
-            "JohnBob\\Src\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Jean-François DI RIENZO",
-            "email": "jf.dirienzo@gmail.com"
-        }
-    ],
-    "require": {
-        "mongodb/mongodb": "^1.9"
+  "name": "john-bob/src",
+  "autoload": {
+    "psr-4": {
+      "JohnBob\\Src\\": "src/"
     }
+  },
+  "authors": [
+    {
+      "name": "Jean-François DI RIENZO",
+      "email": "jf.dirienzo@gmail.com"
+    }
+  ],
+  "require": {
+    "mongodb/mongodb": "^1.9",
+    "ext-mongodb": "*"
+  }
 }
