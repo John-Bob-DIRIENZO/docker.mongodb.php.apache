@@ -10,7 +10,7 @@ class Test implements \MongoDB\BSON\Unserializable
     private $address;
     private $borough;
     private $cuisine;
-    private $grades;
+    private $grades = [];
     private $name;
     private $restaurant_id;
 
@@ -108,11 +108,14 @@ class Test implements \MongoDB\BSON\Unserializable
     }
 
     /**
-     * @param mixed $grades
+     * @param array $grades
      */
-    public function setGrades($grades)
+    public function setGrades(array $grades)
     {
-        $this->grades = $grades;
+        foreach ($grades as $grade) {
+            $this->grades[] = new Grade($grade);
+        }
+
     }
 
     /**

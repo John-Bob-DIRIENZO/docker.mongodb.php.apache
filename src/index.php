@@ -10,7 +10,7 @@ require 'vendor/autoload.php';
  * composer require mongodb/mongodb --ignore-platform-reqs
  */
 
-$client = new \MongoDB\Client("mongodb://root:example@mongo:27017");
+$client = new \MongoDB\Client("mongodb://mongo:27017");
 
 $database = $client->selectDatabase('demo');
 $restaurants = $database->selectCollection('restaurants');
@@ -31,7 +31,7 @@ $res = $restaurants->find(
         'grades.score' => ['$lt' => 15, '$not' => ['$gte' => 15]]
     ],
     [
-//        'projection' => ['name' => 1, 'grades.score' => 1, 'borough' => 1, '_id' => 1],
+        //        'projection' => ['name' => 1, 'grades.score' => 1, 'borough' => 1, '_id' => 1],
         'limit' => 1
     ]
 );
@@ -41,7 +41,11 @@ $results = $res->toArray();
 
 //var_dump($results);
 
-print_r($results[0]);
+// print_r($results[0]);
+
+// var_dump($results[0]->getGrades()[0]['date']->toDateTime()->format('Y/m/d H:i:s'));
+
+var_dump($results[0]->getGrades()[0]->getDate()->format('Y/m/d H:i:s'));
 
 //$res = iterator_to_array($res);
 //
@@ -61,4 +65,3 @@ print_r($results[0]);
 ////    echo $i['name'] . ' est situé à ' . $i->borough;
 //    echo '<br/>------<br/>';
 //}
-
